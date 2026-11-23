@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карта рубежей обороны — Битва за Москву</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-transition">
+    <span>ОПЕРАТИВНАЯ КАРТА ОБОРОНЫ</span>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-badge">85 ЛЕТ</span>
+      ЦИФРОВОЙ МУЗЕЙ ПОБЕДЫ
+    </a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="heroes.html">Герои и личности</a>
+      <a href="maps.html" class="active">Карта рубежей</a>
+      <a href="arsenal.html">Техника</a>
+      <a href="timeline.html">Хронология и архив</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Рубежи обороны Москвы</h1>
+    <p class="section-subtitle">Нажмите на любую красную точку на схеме Подмосковья, чтобы изучить ход сражений на этом направлении</p>
+
+    <div class="map-layout">
+      <div class="map-canvas">
+        <svg viewBox="0 0 600 500" class="map-svg">
+          <path d="M 180 60 Q 110 250 220 440" fill="none" stroke="#c82333" stroke-width="3" stroke-dasharray="10,6" />
+          <text x="65" y="45" fill="#c82333" font-size="12" font-weight="bold">ЛИНИЯ ФРОНТА (НОЯБРЬ 1941)</text>
+
+          <circle cx="360" cy="240" r="24" fill="rgba(212, 175, 55, 0.2)" stroke="#d4af37" stroke-width="2" />
+          <circle cx="360" cy="240" r="8" fill="#d4af37" />
+          <text x="392" y="245" fill="#d4af37" font-size="16" font-weight="bold">МОСКВА</text>
+
+          <g class="map-point active" data-id="khimki">
+            <circle class="pulse" cx="310" cy="180" r="18" />
+            <circle class="dot" cx="310" cy="180" r="8" />
+            <text x="325" y="175">Химки / Лобня</text>
+          </g>
+
+          <g class="map-point" data-id="volokolamsk">
+            <circle class="pulse" cx="150" cy="140" r="18" />
+            <circle class="dot" cx="150" cy="140" r="8" />
+            <text x="165" y="135">Волоколамск</text>
+          </g>
+
+          <g class="map-point" data-id="klin">
+            <circle class="pulse" cx="240" cy="80" r="18" />
+            <circle class="dot" cx="240" cy="80" r="8" />
+            <text x="255" y="75">Клин и Дмитров</text>
+          </g>
+
+          <g class="map-point" data-id="naro">
+            <circle class="pulse" cx="180" cy="285" r="18" />
+            <circle class="dot" cx="180" cy="285" r="8" />
+            <text x="195" y="280">Наро-Фоминск</text>
+          </g>
+
+          <g class="map-point" data-id="tula">
+            <circle class="pulse" cx="280" cy="430" r="18" />
+            <circle class="dot" cx="280" cy="430" r="8" />
+            <text x="295" y="435">Город-герой Тула</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="map-info-panel" id="map-panel">
+        <span class="hero-role" id="map-sector">СЕВЕРО-ЗАПАДНЫЙ РУБЕЖ • 27 КМ ДО КРЕМЛЯ</span>
+        <h2 id="map-title" style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 10px;">
+          Рубеж Химки — Красная Поляна
+        </h2>
+        <div id="map-dates" class="hero-years">Ноябрь – декабрь 1941 года</div>
+        <p id="map-desc" style="color: var(--text-main); line-height: 1.7; margin-bottom: 20px;">
+          Ближайший к столице рубеж обороны на Ленинградском направлении. В районе Красной Поляны и Лобни немецкая разведка вышла на расстояние около 27–30 км от Кремля, откуда в бинокли были видны купола Москвы. Именно здесь советские части 20-й и 16-й армий остановили врага и 6 декабря перешли в мощное контрнаступление.
+        </p>
+        <div class="modal-quote" id="map-fact">
+          Памятный знак «Противотанковые ежи» на 23-м километре Ленинградского шоссе в Химках отмечает точку, ближе которой враг не прошёл.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Творческий проект на конкурс <strong>«Страницы народного подвига. Битва за Москву»</strong> (КИПФИН, ПЦК ОГСЭД)</p>
+    <p style="margin-top: 8px;">Авторы: <strong>[Впишите ваши ФИО и номер группы]</strong> • Научный руководитель: <strong>[Впишите ФИО преподавателя]</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const mapData = {
+      khimki: {
+        sector: "СЕВЕРО-ЗАПАДНЫЙ РУБЕЖ • 27 КМ ДО КРЕМЛЯ",
+        title: "Рубеж Химки — Красная Поляна",
+        dates: "Конец ноября – декабрь 1941 года",
+        desc: "Ближайший к столице рубеж обороны на Ленинградском направлении. В районе Красной Поляны и Лобни передовые отряды вермахта вышли на расстояние менее 30 км от центра Москвы. Советские войска 20-й армии и зенитчики ПВО остановили наступление, а 6 декабря отсюда началось освобождение Подмосковья.",
+        fact: "Знаменитый монумент «Ежи» на Ленинградском шоссе в Химках установлен на рубеже, где враг был остановлен навсегда."
+      },
+      volokolamsk: {
+        sector: "ЗАПАДНОЕ НАПРАВЛЕНИЕ • ВОЛОКОЛАМСКОЕ ШОССЕ",
+        title: "Оборона Волоколамска и Дубосеково",
+        dates: "Октябрь – 20 декабря 1941 года",
+        desc: "Здесь держала оборону 16-я армия Рокоссовского и 316-я дивизия генерала Панфилова. На протяжении двух месяцев советские бойцы сдерживали танковые клинья группы армий «Центр», перемалывая элитные дивизии противника.",
+        fact: "Город Волоколамск удостоен почётного звания «Город воинской славы»."
+      },
+      klin: {
+        sector: "СЕВЕРНЫЙ ФЛАНГ • КАНАЛ МОСКВА — ВОЛГА",
+        title: "Бои за Клин, Дмитров и Яхрому",
+        dates: "Ноябрь – 15 декабря 1941 года",
+        desc: "Враг пытался обойти Москву с севера, форсировав канал Москва — Волга в районе Яхромы. Бойцы 1-й ударной армии под командованием генерал-лейтенанта В.И. Кузнецова отбросили немецкие танки за канал и освободили Клин и Солнечногорск.",
+        fact: "На Перемиловской высоте под Яхромой возвышается 28-метровый бронзовый монумент солдата-освободителя."
+      },
+      naro: {
+        sector: "ЦЕНТРАЛЬНЫЙ СЕКТОР • РЕКА НАРА",
+        title: "Наро-Фоминск и подвиг Подольских курсантов",
+        dates: "Октябрь – 26 декабря 1941 года",
+        desc: "На Малоярославецком и Наро-Фоминском направлениях путь танкам преградили 33-я армия генерала Ефремова и 3500 курсантов Подольских военных училищ. Ценой огромных потерь они выиграли драгоценное время для подхода сибирских резервов.",
+        fact: "Подольские курсанты сдерживали превосходящие силы врага на Ильинском рубеже почти две недели."
+      },
+      tula: {
+        sector: "ЮЖНЫЙ ЩИТ СТОЛИЦЫ • ТУЛЬСКАЯ ОБОРОНИТЕЛЬНАЯ ОПЕРАЦИЯ",
+        title: "Героическая оборона Тулы",
+        dates: "24 октября – 5 декабря 1941 года",
+        desc: "2-я танковая армия генерала Гудериана пыталась захватить Тулу с ходу и ударить по Москве с юга. Город оказался в полуокружении, но регулярные части 50-й армии и Тульский рабочий полк отбили все штурмы, не сдав город врагу.",
+        fact: "Тула — единственный город на подступах к Москве, который выдержал полную осаду и не был занят противником."
+      }
+    };
+
+    const points = document.querySelectorAll(".map-point");
+    const panel = document.getElementById("map-panel");
+
+    points.forEach(pt => {
+      pt.addEventListener("click", () => {
+        points.forEach(p => p.classList.remove("active"));
+        pt.classList.add("active");
+
+        const key = pt.getAttribute("data-id");
+        const info = mapData[key];
+
+        panel.style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("map-sector").innerText = info.sector;
+          document.getElementById("map-title").innerText = info.title;
+          document.getElementById("map-dates").innerText = info.dates;
+          document.getElementById("map-desc").innerText = info.desc;
+          document.getElementById("map-fact").innerText = info.fact;
+          panel.style.opacity = 1;
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>

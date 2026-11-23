@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хронология и архив — Битва за Москву</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline-list {
+      border-left: 3px solid var(--accent-red);
+      padding-left: 28px;
+      margin-left: 10px;
+      margin-bottom: 50px;
+    }
+    .timeline-item {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 22px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .timeline-item:hover {
+      transform: translateX(6px);
+      border-color: var(--accent-gold);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 26px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      border: 3px solid var(--bg-dark);
+    }
+    .timeline-item.hidden-item {
+      display: none;
+    }
+    .timeline-date {
+      color: var(--accent-gold);
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .doc-card {
+      background: #181b20;
+      border: 1px dashed var(--accent-gold);
+      border-radius: 10px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .doc-card:hover {
+      background: #22262e;
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition">
+    <span>ХРОНОЛОГИЯ И ЦИФРОВОЙ АРХИВ</span>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-badge">85 ЛЕТ</span>
+      ЦИФРОВОЙ МУЗЕЙ ПОБЕДЫ
+    </a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="heroes.html">Герои и личности</a>
+      <a href="maps.html">Карта рубежей</a>
+      <a href="arsenal.html">Техника</a>
+      <a href="timeline.html" class="active">Хронология и архив</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Хронология великой битвы</h1>
+    <p class="section-subtitle">Переключайте этапы сражения, чтобы проследить путь от тяжёлой обороны до разгрома врага</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-stage="all">Все события (1941–1942)</button>
+      <button class="filter-btn" data-stage="defense">1. Оборонительный этап (сентябрь – декабрь 1941)</button>
+      <button class="filter-btn" data-stage="counter">2. Контрнаступление (декабрь 1941 – апрель 1942)</button>
+    </div>
+
+    <div class="timeline-list">
+      <div class="timeline-item" data-stage="defense">
+        <span class="timeline-date">30 СЕНТЯБРЯ – 2 ОКТЯБРЯ 1941 Г.</span>
+        <h3 style="margin-bottom: 8px;">Начало немецкой операции «Тайфун»</h3>
+        <p style="color: var(--text-muted);">Немецкая группа армий «Центр» переходит в генеральное наступление на Москву. В окружение под Вязьмой и Брянском попадают крупные силы советских фронтов, но ценой упорного сопротивления они сковывают 28 дивизий вермахта на две недели.</p>
+      </div>
+
+      <div class="timeline-item" data-stage="defense">
+        <span class="timeline-date">19 ОКТЯБРЯ 1941 Г.</span>
+        <h3 style="margin-bottom: 8px;">Введение осадного положения в Москве</h3>
+        <p style="color: var(--text-muted);">Государственный Комитет Обороны вводит в столице и прилегающих районах осадное положение. Свыше 500 тысяч москвичей выходят на строительство противотанковых рвов, надолбов и баррикад.</p>
+      </div>
+
+      <div class="timeline-item" data-stage="defense">
+        <span class="timeline-date">7 НОЯБРЯ 1941 Г.</span>
+        <h3 style="margin-bottom: 8px;">Исторический парад на Красной площади</h3>
+        <p style="color: var(--text-muted);">В день 24-й годовщины Октябрьской революции в заснеженной Москве проходит военный парад. Прямо с брусчатки Красной площади войска отправляются на передовую.</p>
+      </div>
+
+      <div class="timeline-item" data-stage="defense">
+        <span class="timeline-date">16 – 29 НОЯБРЯ 1941 Г.</span>
+        <h3 style="margin-bottom: 8px;">Героическая оборона на ближних подступах</h3>
+        <p style="color: var(--text-muted);">Подвиг 28 панфиловцев у разъезда Дубосеково, бои у Крюково, Яхромы и Красной Поляны (Химки). Немецкие войска выдыхаются в 27–30 км от Кремля, так и не сумев прорвать оборону.</p>
+      </div>
+
+      <div class="timeline-item" data-stage="counter">
+        <span class="timeline-date">5 – 6 ДЕКАБРЯ 1941 Г.</span>
+        <h3 style="margin-bottom: 8px;">Начало контрнаступления Красной Армии</h3>
+        <p style="color: var(--text-muted);">Войска Калининского, Западного и Юго-Западного фронтов переходят в решительное контрнаступление в 30-градусные морозы. Враг отброшен от столицы на 100–250 километров.</p>
+      </div>
+
+      <div class="timeline-item" data-stage="counter">
+        <span class="timeline-date">ДЕКАБРЬ 1941 – АПРЕЛЬ 1942 Г.</span>
+        <h3 style="margin-bottom: 8px;">Освобождение Подмосковья и итоги битвы</h3>
+        <p style="color: var(--text-muted);">Освобождены Клин, Солнечногорск, Истра, Волоколамск, Калуга, Можайск и более 11 000 населённых пунктов. Развеян миф о «непобедимости» германской армии.</p>
+      </div>
+    </div>
+
+    <!-- Цифровой архив документов -->
+    <h2 class="section-title">Цифровой архив и документы эпохи</h2>
+    <p class="section-subtitle">Нажмите на любой архивный экспонат, чтобы прочитать полный текст документа</p>
+
+    <div class="cards-grid" style="margin-bottom: 60px;">
+      <div class="doc-card open-modal-btn"
+        data-name="Постановление ГКО № 813 от 19 октября 1941 г."
+        data-role="АРХИВНЫЙ ДОКУМЕНТ • ОСАДНОЕ ПОЛОЖЕНИЕ"
+        data-bio="«Сим объявляется, что оборона столицы на рубежах, отстоящих на 100–120 километров западнее Москвы, поручена командующему Западным фронтом генералу армии т. Жукову... С 20 октября 1941 г. ввести в городе Москве и прилегающих к городу районах осадное положение.»"
+        data-quote="Подписано: Председатель Государственного Комитета Обороны И. Сталин.">
+        <span class="hero-role">Документ № 1</span>
+        <h3 style="color: var(--accent-gold); margin-bottom: 8px;">Постановление об осадном положении</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Нажмите, чтобы открыть текст приказа от 19 октября 1941 г. →</p>
+      </div>
+
+      <div class="doc-card open-modal-btn"
+        data-name="Письмо с фронта политрука В.Г. Клочкова (осень 1941 г.)"
+        data-role="ФРОНТОВАЯ ПЕРЕПИСКА • СЕМЕЙНЫЙ АРХИВ"
+        data-bio="«Дорогая моя Нина и дочурка Элечка! Сейчас стоим под самой Москвой. Враг рвётся к столице, но мы поклялись не пропустить его ни на шаг. Если придётся отдать жизнь за Родину — знайте, что я сражался честно и до конца...»"
+        data-quote="Хранится в фондах Центрального музея Вооружённых Сил РФ.">
+        <span class="hero-role">Документ № 2</span>
+        <h3 style="color: var(--accent-gold); margin-bottom: 8px;">Письмо защитника Москвы семье</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Нажмите, чтобы прочитать строки с передовой →</p>
+      </div>
+
+      <div class="doc-card open-modal-btn"
+        data-name="Список использованных источников и цифровых архивов"
+        data-role="БИБЛИОГРАФИЯ ПРОЕКТА"
+        data-bio="1. Официальный портал Министерства обороны РФ «Память народа» (pamyat-naroda.ru). 2. Фонды Музея Победы на Поклонной горе (victorymuseum.ru). 3. Материалы Центрального архива Министерства обороны РФ (ЦАМО). 4. Воспоминания Маршала Советского Союза Г.К. Жукова «Воспоминания и размышления»."
+        data-quote="Все исторические факты проверены по документальным источникам.">
+        <span class="hero-role">Источники</span>
+        <h3 style="color: var(--accent-gold); margin-bottom: 8px;">Архивы и литература</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Нажмите, чтобы посмотреть список источников для жюри →</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="hero-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <span class="hero-role" id="modal-role">АРХИВ</span>
+      <h2 id="modal-name" style="font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-bottom: 15px; color: var(--accent-gold);">Документ</h2>
+      <p id="modal-bio" style="color: var(--text-main); line-height: 1.7;"></p>
+      <div class="modal-quote" id="modal-quote">Примечание</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Творческий проект на конкурс <strong>«Страницы народного подвига. Битва за Москву»</strong> (КИПФИН, ПЦК ОГСЭД)</p>
+    <p style="margin-top: 8px;">Авторы: <strong>[Впишите ваши ФИО и номер группы]</strong> • Научный руководитель: <strong>[Впишите ФИО преподавателя]</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const stageBtns = document.querySelectorAll(".filter-btn");
+    const items = document.querySelectorAll(".timeline-item");
+
+    stageBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        stageBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const stage = btn.getAttribute("data-stage");
+
+        items.forEach(item => {
+          if (stage === "all" || item.getAttribute("data-stage") === stage) {
+            item.classList.remove("hidden-item");
+          } else {
+            item.classList.add("hidden-item");
+          }
+        });
+      });
+    });
+
+    const modal = document.getElementById("hero-modal");
+    const closeBtn = document.getElementById("modal-close");
+
+    document.querySelectorAll(".open-modal-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.getElementById("modal-name").innerText = btn.getAttribute("data-name");
